@@ -1,0 +1,48 @@
+Start Project--
+
+create a new folder ex nodetest
+in nodetest folder-
+open cmd or terminal 
+then hit npm init
+then follow the instruction you can just hit enter button to skip it
+
+then Make folder structure as 
++---config
++---controllers
++---media
++---middleware
++---models
++---node_modules
++---routes
+-app.js
+-package-lock.json
+package.json
+
+first you should install express mongoose by using npm i express mongoose
+
+then create server using express library in app.js file
+ex:-
+var express = require('express');
+var app = express();
+
+app.get('/', function (req, res) {
+   res.send('Hello World');
+})
+
+var server = app.listen(8081, function () {
+   var host = server.address().address
+   var port = server.address().port
+   
+   console.log("Example app listening at http://%s:%s", host, port)
+})
+
+then opne terminal and run app.js by node app.js
+then your server start on localhost:port
+you can see more about (https://www.tutorialspoint.com/nodejs/index.htm)
+
+-Connection with mongodb using mongoose
+see - (https://mongoosejs.com/docs/)
+
+
+### 
+see more here (https://github.com/imaheshaher/gnex-node)

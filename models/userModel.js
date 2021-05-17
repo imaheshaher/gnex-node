@@ -6,9 +6,10 @@ const userSchema = new mongoose.Schema({
 
   password:{type:String,required: [true, "can't be blank"]},
   bio: String,
-  image: String
+  image: String,
+  token:String
  
-},{timestamp:true})
+},{timestamps:true})
 
 userSchema.plugin(uniqueValidator, {message: 'is already taken.'});
 const userModel = mongoose.model('user', userSchema);

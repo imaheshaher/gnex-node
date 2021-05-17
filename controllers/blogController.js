@@ -15,6 +15,7 @@ module.exports.createBlog= async(req,res) =>{
     else {
         data["blog_image"]=data.blog_image
     }
+    data["user"]=req.user.id
      if(data._id!=null){
          await blogModel.findOneAndUpdate({_id:data._id},{$set:{blog_content:data.blog_content,blog_image:data.blog_image,blog_description:data.blog_description}},{new:true}).then(data=>{
              console.log(data)
@@ -43,7 +44,7 @@ module.exports.createBlog= async(req,res) =>{
 }
 
 module.exports.getBlog= async(req,res) =>{
-    var data = await blogModel.find({})
+    var data = await blogModel.find({}).sort({_id:-1})
 
     obj.status=true;
     obj.message="blog listed successfully"

@@ -1,7 +1,2 @@
-GET  http://127.0.0.1:5000/accounts/register
+GET  http://127.0.0.1:5000/test/unblock
 Content-Type: application/json
-
-{
-    "email":"a@gmail.com"
-    
-}
